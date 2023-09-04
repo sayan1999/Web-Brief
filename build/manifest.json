@@ -1,0 +1,20 @@
+{
+  "name": "Web-Brief",
+  "version": "1.0.0",
+  "description": "Summarize any Browser text content in less than 100 words",
+  "manifest_version": 3,
+  "author": "Sayan Dey",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "permissions": ["tabs", "activeTab", "storage"],
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Web-Brief"
+  },
+
+  "host_permissions": ["http://*/*", "https://*/*"]
+}
