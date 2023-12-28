@@ -2,6 +2,10 @@
 
 Grasp the essence of any web article in seconds with Web-Brief! This browser extension leverages the power of AI to deliver concise and informative summaries of text content.
 
+## Demo image
+
+![Demo](UI.png)
+
 ## Features
 
 - **Summarize any selected text:** Effortlessly extract key takeaways from articles, blog posts, research papers, and more.
@@ -36,7 +40,3 @@ Grasp the essence of any web article in seconds with Web-Brief! This browser ext
 - Utilizes Gemini API for text summarization
 - Handles large documents through chunking
 - Stores user token for persistent usage
-
-## Demo image
-
-![Demo](UI.png)
