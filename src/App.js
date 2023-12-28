@@ -28,8 +28,8 @@ async function savetoken(token) {
   );
 }
 
-function process(evt) {
-  document.getElementById("summary").innerHTML = "";
+function process(evt, prompt) {
+  document.getElementById("summary").innerText = "";
   chrome.tabs.query(
     { active: true, currentWindow: true, windowType: "normal" },
     function (tabs) {
@@ -48,13 +48,13 @@ function process(evt) {
               let text = response["content"];
               if (response["token"]) {
                 evt.target.classList.add("activeLoading");
-                summarize(text, response["token"]).then((summary) => {
+                summarize(text, response["token"], prompt).then((summary) => {
                   if (summary) {
                     console.log("Summary:", summary);
-                    document.getElementById("summary").innerHTML = summary;
+                    document.getElementById("summary").innerText = summary;
                   } else {
                     console.log("Error fetching summary API");
-                    document.getElementById("summary").innerHTML =
+                    document.getElementById("summary").innerText =
                       "Error fetching summary API limit reached or wrong token?";
                     alert(
                       "Error fetching summary API limit reached or wrong token? Please crosscheck your token try again later or upgrade to pro from huggiingface"
@@ -64,9 +64,11 @@ function process(evt) {
                   evt.target.classList.remove("activeLoading");
                 });
               } else {
-                console.log("[Fail]: Huggingface inference token not found!");
+                console.log(
+                  "[Fail]: Gemini AI google inference token not found!"
+                );
                 alert(
-                  "Inference token not found! Please register an inference token from Huggingface.com free of cost to use this app"
+                  "Inference token not found! Please register an inference token from gemini ai free of cost to use this app"
                 );
               }
             } else {

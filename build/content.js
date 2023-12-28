@@ -9,8 +9,8 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
           token: localStorage["token"],
         });
       } else {
-        console.log("Huggingface token unavailable");
-        alert("Huggingface token unavailable");
+        console.log("Summarizer token unavailable");
+        alert("Summarizer token unavailable");
         sendResponse({
           type: "msg_from_content",
           content: window.getSelection().toString(),
