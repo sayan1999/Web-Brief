@@ -36,3 +36,7 @@ Grasp the essence of any web article in seconds with Web-Brief! This browser ext
 - Utilizes Gemini API for text summarization
 - Handles large documents through chunking
 - Stores user token for persistent usage
+
+## Demo image
+
+![Demo](UI.png)
